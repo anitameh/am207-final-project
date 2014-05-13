@@ -26,16 +26,34 @@
         </ul>
 
       </header>
-
-      <p><b>Probabilistic Graphical Models</b></p>
       <section>
+      <p><b>Probabilistic Graphical Models: A Brief Introduction</b></p>
       <p>
           Probabilistic graphical models (PGMs) provide a mechanism for exploiting structure in complex distributions, in order to describe them compactly. By using conditional independence assumptions, we are able to construct and effectively represent joint distributions. PGMs are commonly known as ``Bayesian networks" (though this name can be misleading).
       </p>
       <p>
           "Hierarchical models" are a type of Bayesian network, though there does not exist a consistent, single definition. In this paper, we use the definition that refers to a type of multi-level model where parameters are nested within another. In the next section, we provide a high-level overview of partial pooling in the context of hierarchical models.
       </p>
-
+      <p><b>Hierarchical Models and Pooling</b></p>
+      <p>
+        When modeling a data set, the concept of "pooling" often arises, though in many cases, implicitly. "Complete pooling" in, for example, a linear regression, is perhaps the most common case because it makes the assumption that all data points from all experiments come from the same parameter; that is, they are completely pooled together. For our data set, we can visualize this model thusly:
+        <center>
+          <img class="" src="complete-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+        </center>
+      </p>  
+      <p>
+        "No pooling," on the other hand, is the case when each experiment has its own identifying parameter. Neither of these modeling techniques, however, is completely satisfactory: in the first case, the estimated parameters are often under-fit because they are pulled by outliers; in the second case, the estimated parameters are highly over-fit because they rely on a very small number of data points:
+        <center>
+          <img class="" src="no-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+        </center>
+      </p>
+      <p>
+        "Partial pooling" is a compromise between the two, and stems from the idea that though there exist parameters for each experiment, these parameters share information with one another. More specifically, they are drawn from a common distribution. Furthermore, <i>group-level parameters</i> capture information at a group-level:
+        <center>
+          <img class="" src="partial-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+        </center>
+        Here, each element y corresponds to the standardized mean child income in county i and state j. Since we do not know the hyperparameters, we can either learn them by performing a full Bayesian treatment (as is done in this project), or conduct Bayesian approximation by doing, for example, moment-matching.
+      </p>
         
       </section>
       <footer>
