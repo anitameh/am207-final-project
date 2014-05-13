@@ -29,7 +29,7 @@
       <section>
       <p><b>Probabilistic Graphical Models: A Brief Introduction</b></p>
       <p>
-          Probabilistic graphical models (PGMs) provide a mechanism for exploiting structure in complex distributions, in order to describe them compactly. By using conditional independence assumptions, we are able to construct and effectively represent joint distributions. PGMs are commonly known as ``Bayesian networks" (though this name can be misleading).
+          Probabilistic graphical models (PGMs) provide a mechanism for exploiting structure in complex distributions, in order to describe them compactly. By using conditional independence assumptions, we are able to construct and effectively represent joint distributions. PGMs are commonly known as "Bayesian networks" (though this name can be misleading).
       </p>
       <p>
           "Hierarchical models" are a type of Bayesian network, though there does not exist a consistent, single definition. In this paper, we use the definition that refers to a type of multi-level model where parameters are nested within another. In the next section, we provide a high-level overview of partial pooling in the context of hierarchical models.
@@ -42,10 +42,11 @@
         </center>
       </p>  
       <p>
-        "No pooling," on the other hand, is the case when each experiment has its own identifying parameter. Neither of these modeling techniques, however, is completely satisfactory: in the first case, the estimated parameters are often under-fit because they are pulled by outliers; in the second case, the estimated parameters are highly over-fit because they rely on a very small number of data points:
+        "No pooling," on the other hand, is the case when each experiment has its own identifying parameter:
         <center>
           <img class="" src="no-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
         </center>
+        Neither of these modeling techniques, however, is completely satisfactory: in the first case, the estimated parameters are often under-fit because they are pulled by outliers; in the second case, the estimated parameters are highly over-fit because they rely on a very small number of data points.
       </p>
       <p>
         "Partial pooling" is a compromise between the two, and stems from the idea that though there exist parameters for each experiment, these parameters share information with one another. More specifically, they are drawn from a common distribution. Furthermore, <i>group-level parameters</i> capture information at a group-level:
