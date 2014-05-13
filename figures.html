@@ -21,20 +21,23 @@
 
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="figures.html">Results & Figures </a></li>
+          <li><a href="theory.html">Theory </a></li>
           <li><a href="screencast.html">Screencast</a></li>
         </ul>
 
       </header>
       <section>
-      <p><b>Probabilistic Graphical Models: A Brief Introduction</b></p>
+      <p><b>A Plot of Income</b></p>
       <p>
-          Probabilistic graphical models (PGMs) provide a mechanism for exploiting structure in complex distributions, in order to describe them compactly. By using conditional independence assumptions, we are able to construct and effectively represent joint distributions. PGMs are commonly known as ``Bayesian networks" (though this name can be misleading).
+        <center>
+          <img class="" src="child-income.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
+          <img class="" src="parent-income.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
+        </center>
+        <center>
+          <img class="" src="explore-mci.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
+        </center>
       </p>
-      <p>
-          "Hierarchical models" are a type of Bayesian network, though there does not exist a consistent, single definition. In this paper, we use the definition that refers to a type of multi-level model where parameters are nested within another. In the next section, we provide a high-level overview of partial pooling in the context of hierarchical models.
-      </p>
-      <p><b>Hierarchical Models and Pooling</b></p>
+      <p><b>Complete Pooling and Bayesian Linear Regression</b></p>
       <p>
         When modeling a data set, the concept of "pooling" often arises, though in many cases, implicitly. "Complete pooling" in, for example, a linear regression, is perhaps the most common case because it makes the assumption that all data points from all experiments come from the same parameter; that is, they are completely pooled together. For our data set, we can visualize this model thusly:
         <center>
@@ -58,7 +61,7 @@
         
       </section>
       <footer>
-        <p>For more information on probabilistic graphical models, check out <a href="http://pgm.stanford.edu/">Daphne Koller's book</a> or Andrew Gelman's text on <a href="http://www.stat.columbia.edu/~gelman/book/"> Bayesian Data Analysis</a>.</p>
+        <p>Where's the math? Check out the paper Anita wrote summarizing the methodology, her code, or reach out to <a href="scholar.harvard.edu/ameh">her</a> directly.</p>
         <p>This project is maintained by <a href="https://github.com/anitameh">anitameh</a>.</p>
       </footer>
     </div>
