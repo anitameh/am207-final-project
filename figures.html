@@ -30,24 +30,27 @@
       <p><b>A Plot of Income</b></p>
       <p>
         <center>
-          <img class="" src="child-income.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
-          <img class="" src="parent-income.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
+          <img class="" src="child-income.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
+          <img class="" src="parent-income.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
         </center>
         <center>
-          <img class="" src="explore-mci.jpg" style="width:device-width;max-width:40%;margin:auto;display:inline"/>
+          <img class="" src="explore-mci.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
         </center>
       </p>
       <p><b>Complete Pooling and Bayesian Linear Regression</b></p>
       <p>
-        When modeling a data set, the concept of "pooling" often arises, though in many cases, implicitly. "Complete pooling" in, for example, a linear regression, is perhaps the most common case because it makes the assumption that all data points from all experiments come from the same parameter; that is, they are completely pooled together. For our data set, we can visualize this model thusly:
+        Recall that in complete pooling, we are essentially conducting a Bayesian linear regression:
         <center>
-          <img class="" src="complete-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+          <img class="" src="bls.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
         </center>
       </p>  
       <p>
-        "No pooling," on the other hand, is the case when each experiment has its own identifying parameter. Neither of these modeling techniques, however, is completely satisfactory: in the first case, the estimated parameters are often under-fit because they are pulled by outliers; in the second case, the estimated parameters are highly over-fit because they rely on a very small number of data points:
+        We perform ten-fold cross-validation on standardized mean child (y) and parent income (x) per county (i) and obtain the following results:
         <center>
-          <img class="" src="no-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+          <img class="" src="bayesian-result.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
+        </center>
+        <center>
+          <img class="" src="nfold-complete-pooling.jpg" style="width:device-width;max-width:80%;margin:auto;display:inline"/>
         </center>
       </p>
       <p>
