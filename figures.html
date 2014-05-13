@@ -30,11 +30,11 @@
       <p><b>A Plot of Income</b></p>
       <p>
         <center>
-          <img class="" src="child-income.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
-          <img class="" src="parent-income.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
+          <img class="" src="child-income.jpg" style="width:device-width;max-width:50%;margin:auto;display:inline"/>
+          <img class="" src="parent-income.jpg" style="width:device-width;max-width:50%;margin:auto;display:inline"/>
         </center>
         <center>
-          <img class="" src="explore-mci.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+          <img class="" src="explore-mci.jpg" style="width:device-width;max-width:100%;margin:auto;display:inline"/>
         </center>
       </p>
       <p><b>Complete Pooling and Bayesian Linear Regression</b></p>
@@ -45,20 +45,32 @@
         </center>
       </p>  
       <p>
-        We perform ten-fold cross-validation on standardized mean child (y) and parent income (x) per county (i) and obtain the following results:
+        Estimating the parameters on the entire data set, we get the following:
         <center>
           <img class="" src="bayesian-result.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
         </center>
+        Next, we perform ten-fold cross-validation on standardized mean child (y) and parent income (x) per county (i) and obtain the following results:
         <center>
-          <img class="" src="nfold-complete-pooling.jpg" style="width:device-width;max-width:80%;margin:auto;display:inline"/>
+          <img class="" src="nfold-complete-pooling.jpg" style="width:device-width;max-width:100%;margin:auto;display:inline"/>
         </center>
       </p>
+      <p><b>Partial Pooling with Group-Level Predictors</b></p>
       <p>
-        "Partial pooling" is a compromise between the two, and stems from the idea that though there exist parameters for each experiment, these parameters share information with one another. More specifically, they are drawn from a common distribution. Furthermore, <i>group-level parameters</i> capture information at a group-level:
+        Next, we perform partial pooling, accounting for information-sharing across states, and estimate the hyperparameters and parameters. We can the predict data points for each state (a subset is shown here):
         <center>
-          <img class="" src="partial-pooling.jpg" style="width:device-width;max-width:70%;margin:auto;display:inline"/>
+          <img class="" src="sample-partial-pooling-predict.jpg" style="width:device-width;max-width:60%;margin:auto;display:inline"/>
         </center>
-        Here, each element y corresponds to the standardized mean child income in county i and state j. Since we do not know the hyperparameters, we can either learn them by performing a full Bayesian treatment (as is done in this project), or conduct Bayesian approximation by doing, for example, moment-matching.
+      </p>  
+      <p>
+        Again, we perform ten-fold cross-validation to get an error measure.
+      </p>
+      <p><b>Error Comparison: Which Model is Better?</b></p>
+      <p>
+        In studying the figures below, it is clear that partial pooling performs significantly better than complete pooling. This is not surprising, as the complete pooling estimate is skewed by outlying data points (e.g. anomalously high or low incomes).
+        <center>
+          <img class="" src="accuracy-complete-pooling.jpg" style="width:device-width;max-width:50%;margin:auto;display:inline"/>
+          <img class="" src="accuracy-partial-pooling.jpg" style="width:device-width;max-width:50%;margin:auto;display:inline"/>
+        </center>
       </p>
 
         
